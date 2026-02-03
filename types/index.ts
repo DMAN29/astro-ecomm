@@ -33,3 +33,16 @@ export interface SevasOfferedContent {
   title: string;
   cards: SevaCard[];
 }
+
+export interface JapaItem {
+  id: string;
+  title: string;
+  highlightedTitle: string;
+  description: string;
+  buttonText: string;
+  imageUrl: string;
+}
+
+export interface JapasContent {
+  items: JapaItem[];
+}
