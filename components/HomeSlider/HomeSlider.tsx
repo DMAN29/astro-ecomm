@@ -56,7 +56,7 @@ const HomeSlider: React.FC = () => {
   return (
     <div className="overflow-hidden home-banner my-4">
       {isLoading ? (
-        <div className="px-1 md:px-[88px]">
+        <div className="px-1 md:px-22">
           <Skeleton
             className="w-full aspect-[2.5] md:aspect-[2.8] md:rounded-[20px] rounded-[10px]"
             animation="pulse"
