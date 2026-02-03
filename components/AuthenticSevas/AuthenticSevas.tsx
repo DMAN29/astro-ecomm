@@ -38,7 +38,7 @@ const AuthenticSevas: React.FC = () => {
   }
 
   return (
-    <div className="py-12 bg-[#FFFDF8] relative overflow-hidden">
+    <div className="py-6 md:py-8 relative overflow-hidden md:h-screen md:flex md:flex-col md:justify-center my-15">
       {/* Decorative Flowers (Mock positioning) */}
       <div className="absolute top-1/4 left-4 w-8 h-8 opacity-80 hidden md:block text-orange-500">
         ✿
@@ -47,32 +47,32 @@ const AuthenticSevas: React.FC = () => {
         ✿
       </div>
 
-      <div className="text-center mb-16">
+      <div className="text-center mb-8 md:mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1a2e4c] inline-flex items-center gap-3">
           {data.mainTitle}
           <span className="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-medium tracking-wide">
             LIVE
           </span>
         </h2>
-        <p className="mt-2 text-xl md:text-2xl text-[#E85D04] font-medium transition-all duration-500 ease-in-out">
+        <p className="mt-2 text-xl md:text-2xl text-[#E85D04] font-medium transition-all duration-1000 ease-in-out">
           {Array.isArray(data.subtitle)
             ? data.subtitle[currentSubtitleIndex]
             : data.subtitle}
         </p>
       </div>
 
-      <div className="relative max-w-4xl mx-auto px-4">
+      <div className="relative max-w-4xl mx-auto px-4 w-full">
         {/* Central Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-orange-200 -translate-x-1/2 hidden md:block"></div>
+        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-orange-200 -translate-x-1/2 hidden md:block"></div>
 
         {/* OM Symbol at the top of the line */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 hidden md:block z-10 bg-[#FFFDF8] p-2">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 hidden md:block z-10 bg-background p-2 rounded-full">
           <div className="w-10 h-10 rounded-full border border-orange-200 flex items-center justify-center text-orange-500 font-bold text-xl shadow-sm">
             ॐ
           </div>
         </div>
 
-        <div className="space-y-12 md:space-y-24 pt-8">
+        <div className="space-y-6 md:space-y-12 pt-4">
           {data.features.map((feature, index) => {
             // For zigzag layout:
             // Even index (0, 2): Left side content
@@ -82,17 +82,17 @@ const AuthenticSevas: React.FC = () => {
             return (
               <div
                 key={feature.id}
-                className="relative flex flex-col md:flex-row items-center justify-between w-full"
+                className="relative flex flex-col md:flex-row items-center justify-between w-full "
               >
                 {/* Left Side Container */}
                 <div
-                  className={`flex-1 flex w-full ${isLeft ? "justify-center md:justify-end" : "justify-center md:justify-start md:order-2"}`}
+                  className={`flex-1 flex w-full ${isLeft ? "justify-center md:justify-end" : "justify-center md:justify-start md:order-2"} `}
                 >
                   <div
-                    className={`flex items-center gap-4 max-w-xs ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+                    className={`flex items-center gap-4 max-w-xs ${isLeft ? "flex-row" : "flex-row-reverse"} px-5 py-3 rounded-xl shadow-md mx-2 bg-[#F0EBDD]`}
                   >
                     {/* Image Box */}
-                    <div className="relative w-16 h-16 flex-shrink-0">
+                    <div className="relative w-16 h-16 shrink-0">
                       <Image
                         src={feature.iconUrl}
                         alt={feature.title}
@@ -125,25 +125,6 @@ const AuthenticSevas: React.FC = () => {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      {/* WhatsApp Floating Button Mock */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <div className="bg-green-500 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-green-600 transition-colors">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-          </svg>
         </div>
       </div>
     </div>

@@ -2,12 +2,15 @@ import React from "react";
 import HomeSlider from "../HomeSlider/HomeSlider";
 import AuthenticSevas from "../AuthenticSevas/AuthenticSevas";
 
+import SevasOffered from "../SevasOffered/SevasOffered";
+
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <main>
       <HomeSlider />
       <AuthenticSevas />
-    </div>
+      <SevasOffered />
+    </main>
   );
 };
 
